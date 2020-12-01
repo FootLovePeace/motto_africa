@@ -10,10 +10,10 @@
 
 ### Association
 
-- has_many :informations
+- has_many :posts
 - has_many :comments
 
-## informations テーブル
+## posｔs テーブル
 
 | Column     | Type       | Options                        |
 | ---------- | ---------- | ------------------------------ |
@@ -34,9 +34,9 @@
 | ------ | ---------- | ------------------------------ |
 | title  | string     | null: false                    |
 | user   | references | null: false, foreign_key: true |
-| item   | references | null: false, foreign_key: true |
+| post   | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- belongs_to :information
+- belongs_to :post
