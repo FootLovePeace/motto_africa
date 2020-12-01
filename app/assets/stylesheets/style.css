@@ -52,7 +52,7 @@ a {
 .logo {
   width: 300px;
 }
-.nav-btn{
+.nav__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
@@ -63,12 +63,12 @@ a {
   border-radius: 3px;
   transition: 0.4s ease;
 }
-.nav-btn:hover{
+.nav__btn:hover{
   color: #fff;
   background: #87CEFA;
 }
 
-.nav-nickname{
+.nav__nickname{
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
@@ -76,11 +76,11 @@ a {
   text-decoration: none;
   user-select: none;
 }
-.nav-nickname:hover{
+.nav__nickname:hover{
   opacity: 0.5;
 }
 
-.nav-logout{
+.nav__logout{
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
@@ -88,7 +88,7 @@ a {
   text-decoration: none;
   user-select: none;
 }
-.nav-logout:hover{
+.nav__logout:hover{
   opacity: 0.5;
 }
 
