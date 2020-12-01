@@ -1,0 +1,105 @@
+/* リセットCSS */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+ul,
+li,
+h1,
+h2,
+p,
+div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
+  color: #3b4043;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+  color: #3b4043;
+}
+
+/* ヘッダー */
+
+.header {
+  background-color: #e2eee2;
+  padding: 20px 0;
+}
+.inner {
+  width: 1024px;
+  margin: 0 auto;
+}
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.logo {
+  width: 300px;
+}
+.nav-btn{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #87CEFA;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #87CEFA solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
+.nav-btn:hover{
+  color: #fff;
+  background: #87CEFA;
+}
+
+.nav-nickname{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #87CEFA;
+  text-decoration: none;
+  user-select: none;
+}
+.nav-nickname:hover{
+  opacity: 0.5;
+}
+
+.nav-logout{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #87CEFA;
+  text-decoration: none;
+  user-select: none;
+}
+.nav-logout:hover{
+  opacity: 0.5;
+}
+
+/* フッター */
+
+.footer {
+  background-color: #999;
+  padding: 10px 0;
+}
+.copyright {
+  text-align: center;
+  color: #fff;
+  font-size: 10px;
+}
