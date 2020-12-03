@@ -2,9 +2,18 @@ class Post < ApplicationRecord
   belongs_to :user
   has_one_attached :image
 
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :country
+  belongs_to :genre
+
   with_options presence: true do
     validates :title
     validates :text
     validates :image
-  end         
+  end   
+  
+  with_options numericality: { other_than: 1, message: 'Select' } do
+    validates :country_id
+    validates :genre_id
+  end
 end
