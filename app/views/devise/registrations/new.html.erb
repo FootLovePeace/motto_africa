@@ -4,6 +4,8 @@
       <h2 class="page-heading">ユーザー新規登録</h2>
         <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
 
+        <%= render 'shared/error_messages', model: f.object %>
+
         <div class="field">
           <%= f.label :nickname, "ニックネーム"%><br />
           <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", maxlength: "20" %>
