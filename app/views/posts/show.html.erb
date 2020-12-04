@@ -1,0 +1,35 @@
+<main class="main">
+  <div class="inner">
+    <div class="post__wrapper">
+      <p class="post__heading">
+        <%= "#{@post.title}"%>
+      </p>
+      <%= link_to "投稿者 #{@post.user.nickname}", "#", class: :post__user %>
+      <% if user_signed_in? && current_user.id == @post.user_id %>
+        <div class="post__manage">
+          <%= link_to "編集", "#", class: :post__btn %>
+          <%= link_to "削除", "#", method: :delete, class: :post__btn %>
+        </div>
+      <% end %>  
+      <div class="post__image">
+        <%= image_tag(@post.image) %>
+      </div>
+      <div class="post__body">
+        <div class="post__detail">
+          <p class="detail__message">
+            <%= "#{@post.text}" %>
+          </p>
+        </div> 
+        <div class="post__detail">
+          <p class="detail__message">
+            <%= "#{@post.country.name}" %> 
+          </p>
+        </div>       
+        <div class="post__detail">
+          <p class="detail__message">
+            <%= "#{@post.genre.name}" %> 
+          </p>
+        </div>       
+      </div>
+  </div> 
+</main>
