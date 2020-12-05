@@ -4,7 +4,7 @@
       <p class="post__heading">
         <%= "#{@post.title}"%>
       </p>
-      <%= link_to "投稿者 #{@post.user.nickname}", "#", class: :post__user %>
+      <%= link_to "投稿者 #{@post.user.nickname}", "/users/#{@post.user_id}", class: :post__user %>
       <% if user_signed_in? && current_user.id == @post.user_id %>
         <div class="post__manage">
           <%= link_to "編集", edit_post_path(@post.id), class: :post__btn %>

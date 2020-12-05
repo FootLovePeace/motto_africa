@@ -243,8 +243,18 @@ a {
   color: #999;
   text-decoration: underline;
 }
-/* フッター */
 
+/* ユーザーページ */
+.user__wrapper{
+  min-height: calc(100vh - 161px);
+}
+.user__card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+/* フッター */
 .footer {
   background-color: #999;
   padding: 10px 0;
