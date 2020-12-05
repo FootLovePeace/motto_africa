@@ -32,7 +32,7 @@
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
-| title  | string     | null: false                    |
+| title  | text       | null: false                    |
 | user   | references | null: false, foreign_key: true |
 | post   | references | null: false, foreign_key: true |
 
