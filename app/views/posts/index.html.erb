@@ -1,7 +1,24 @@
 <main class="main">
+    <div class='title-contents'>
+    <div class='bg-opacity'>
+    <h2 class='service-title'>
+      アフリカをもっと身近に感じられるアプリ
+    </h2>
+    <p class='service-explain'>
+      Motto Africaはアフリカに関する記事を投稿して
+    </p>
+    <p class='service-explain'>
+      様々な情報を共有できるアプリです
+    </p>
+    </div>
+    </div>
   <div class="inner">
     <div class="card__wrapper">
       <%= render partial: "post", collection: @posts %> 
     </div>  
   </div>
+  <%= link_to(new_post_path, class: 'article-btn') do %>
+  <span class='article-btn-text'>投稿する</span>
+  <%= image_tag 'icon-africa.png',class: "article-btn-icon" %>
+<% end %>
 </main>    
