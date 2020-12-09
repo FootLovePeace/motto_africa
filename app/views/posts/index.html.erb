@@ -1,24 +1,55 @@
 <main class="main">
     <div class='title-contents'>
-    <div class='bg-opacity'>
-    <h2 class='service-title'>
-      アフリカをもっと身近に感じられるアプリ
-    </h2>
-    <p class='service-explain'>
-      Motto Africaはアフリカに関する記事を投稿して
-    </p>
-    <p class='service-explain'>
-      様々な情報を共有できるアプリです
-    </p>
+      <div class='bg-opacity'>
+        <h2 class='service-title'>
+          アフリカをもっと身近に感じられるアプリ
+        </h2>
+        <p class='service-explain'>
+          Motto Africaはアフリカに関する記事を投稿して
+        </p>
+        <p class='service-explain'>
+          様々な情報を共有できるアプリです
+        </p>
+      </div>
     </div>
-    </div>
-  <div class="inner">
-    <div class="card__wrapper">
-      <%= render partial: "post", collection: @posts %> 
-    </div>  
-  </div>
+
+    <div class="article-contents">
+      <h2 class="title">投稿された記事一覧</h2>
+      <div class='article-lists'>
+        <% @posts.each do |post| %>
+        <div class='article-one'>
+          <%= image_tag post.image, class: "article-img"%>
+          <div class="article-info">
+            <div class="article-title">
+              <%= post.title %>
+            </div>
+            <div class="article-info-group1">  
+              <div class="article-country">
+                <%= post.country.name %>
+              </div>
+              <div class="article-genre">
+                <%= post.genre.name %>
+              </div>
+              <div class="article-date">
+                <%= l post.created_at %>
+              </div>  
+             </div> 
+            <div class="article-info-group2">  
+              <%= image_tag 'icon-user.png', class: "article-icon" %>
+              <%= link_to post.user.nickname, "/users/#{post.user.id}", class: "article-user" %>
+            </div> 
+             <div class="article-details">
+              <%= link_to "記事を読む", post_path(post.id) %>
+             </div>
+          </div>  
+        </div>
+        <% end %>
+      </div>  
+          <%= paginate @posts %>  
+    </div>    
+
   <%= link_to(new_post_path, class: 'article-btn') do %>
-  <span class='article-btn-text'>投稿する</span>
-  <%= image_tag 'icon-africa.png',class: "article-btn-icon" %>
-<% end %>
+    <span class='article-btn-text'>投稿する</span>
+    <%= image_tag 'icon-africa.png',class: "article-btn-icon" %>
+  <% end %>
 </main>    
