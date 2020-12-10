@@ -12,9 +12,22 @@
         </p>
       </div>
     </div>
+    
+    <div class="search-contents">
+      <h1 class="search-title">記事検索</h1>
+      <%= search_form_for @p, url: search_posts_path do |f| %>
+        <%= f.label :country_id_eq, '国名' %>
+        <%= f.collection_select :country_id_eq, Country.where.not(id: 1), :id, :name, include_blank: '指定なし' %>
+        <br>
+        <%= f.label :genre_id_eq, 'ジャンル' %>
+        <%= f.collection_select :genre_id_eq, Genre.where.not(id: 1), :id, :name, include_blank: '指定なし' %>
+        <br>
+        <%= f.submit '検索', class: "search-btn" %>
+      <% end %>
+    </div>  
 
     <div class="article-contents">
-      <h2 class="title">投稿された記事一覧</h2>
+      <h1>投稿された記事一覧</h1>
       <div class='article-lists'>
         <% @posts.each do |post| %>
         <div class='article-one'>
@@ -36,7 +49,9 @@
              </div> 
             <div class="article-info-group2">  
               <%= image_tag 'icon-user.png', class: "article-icon" %>
-              <%= link_to post.user.nickname, "/users/#{post.user.id}", class: "article-user" %>
+              <div class="article-user">
+              <%= post.user.nickname %>
+              </div>
             </div> 
              <div class="article-details">
               <%= link_to "記事を読む", post_path(post.id) %>
@@ -45,7 +60,7 @@
         </div>
         <% end %>
       </div>  
-          <%= paginate @posts %>  
+      <%= paginate @posts %>  
     </div>    
 
   <%= link_to(new_post_path, class: 'article-btn') do %>

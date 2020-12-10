@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit]
   before_action :set_post, only: [:show, :edit, :update]
-  before_action :move_to_index, except: [:index, :show, :new, :create, :destroy]
+  before_action :move_to_index, except: [:index, :show, :new, :create, :destroy, :search]
+  before_action :search_post, only: [:index, :search]
 
   def index  
     @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(5)
@@ -41,6 +42,10 @@ class PostsController < ApplicationController
     post.destroy
     redirect_to root_path
   end
+
+  def search
+    @results = @p.result.order("created_at DESC").page(params[:page]).per(5)
+  end
   
   private
 
@@ -56,6 +61,10 @@ class PostsController < ApplicationController
     unless user_signed_in? && current_user.id == @post.user_id
       redirect_to action: :index
     end
+  end
+
+  def search_post
+    @p = Post.ransack(params[:q])
   end
 
 end
