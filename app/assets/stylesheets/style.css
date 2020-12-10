@@ -82,18 +82,27 @@ img {
 .field{
   margin: 10px 0;
 }
+.field label {
+  font-size: 18px;
+}
+.field input {
+  width: 20%;
+  padding: 7px;
+  margin: 3px 0 5px;
+}
 .actions{
   margin-bottom: 40px;
 }
 .form__btn{
   display: inline-block;
-  padding: 0.4em 1.6em;
-  font-size: 0.8em;
+  padding: 4px 16px;
+  margin-top: 4px;
+  font-size: 20px;
   color: #fff;
   text-decoration: none;
   user-select: none;
-  background: #87CEFA;
-  border: 1px #87CEFA solid;
+  background: #5ece3c;
+  border: 1px #5ece3c solid;
   border-radius: 3px;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
   transition: 0.2s ease;
@@ -137,7 +146,7 @@ img {
 }
 .page-heading {
   font-size: 30px;
-  margin-bottom: 28px;
+  margin: 28px 0;
 }
 .search-contents {
   display: flex;
