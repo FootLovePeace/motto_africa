@@ -4,6 +4,11 @@
       <h2 class="page-heading">ユーザーログイン</h2>
         <%= form_with model: @user, url: user_session_path, local: true do |f| %>
 
+        <div class='login-flash-message'>
+          <%= flash[:notice] %>
+          <%= flash[:alert] %>
+        </div>
+        
         <div class="field">
           <%= f.label :email, "メールアドレス" %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
