@@ -1,12 +1,9 @@
 <div class="main">
-  <div class="inner">
-    <div class="user__wrapper">
-      <h2 class="page-heading">
-        <%= "#{@user.nickname}さんの投稿"%>
-      </h2>
-      <div class="user__card">
-        <%= render partial: "posts/post", collection: @posts %>
-      </div>
-    </div>
+  <div class="article-contents">
+    <h1 class="user-posts">
+      <%= "#{@user.nickname}さんの投稿"%>
+    </h1>
+  <%= render partial: "posts/post", collection: @posts %>
+    <%= paginate @posts %>  
   </div>
 </div>

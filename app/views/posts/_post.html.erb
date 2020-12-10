@@ -1,10 +1,30 @@
-<div class="card">
-  <%= link_to image_tag(post.image, class: :card__img ), post_path(post.id)%>
-  <div class="card__body">
-    <%= link_to "#{post.title}", post_path(post.id), class: :card__title%>
-    <p class="card__summary">
-      <%= "#{post.country.name}"%>
-      <%= "#{post.genre.name}"%>
-    </p>
-  </div>
-</div>
+       <div class='article-lists'> 
+        <div class='article-one'>
+          <%= image_tag post.image, class: "article-img"%>
+          <div class="article-info">
+            <div class="article-title">
+              <%= post.title %>
+            </div>
+            <div class="article-info-group1">  
+              <div class="article-country">
+                <%= post.country.name %>
+              </div>
+              <div class="article-genre">
+                <%= post.genre.name %>
+              </div>
+              <div class="article-date">
+                <%= l post.created_at %>
+              </div>  
+             </div> 
+            <div class="article-info-group2">  
+              <%= image_tag 'icon-user.png', class: "article-icon" %>
+              <div class="article-user">
+              <%= post.user.nickname %>
+              </div>
+            </div> 
+             <div class="article-details">
+              <%= link_to "記事を読む", post_path(post.id) %>
+             </div>
+          </div>  
+        </div>
+      </div>
