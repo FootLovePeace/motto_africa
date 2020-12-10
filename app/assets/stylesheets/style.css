@@ -77,7 +77,7 @@ img {
 
 /* フォーム周り */
 .form__text {
-  width: 50%;
+  width: 54%;
 }
 .field{
   margin: 10px 0;
@@ -87,8 +87,14 @@ img {
 }
 .field input {
   width: 20%;
-  padding: 7px;
+  padding: 7px 0;
   margin: 3px 0 5px;
+}
+#post_title {
+width: 54%;
+}
+#post_image {
+  width: 25%;
 }
 .actions{
   margin-bottom: 40px;
@@ -110,6 +116,14 @@ img {
 .form__btn:hover {
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
   cursor: pointer;
+}
+.login-flash-message {
+  color: red;
+}
+.inner-other {
+  width: 1024px;
+  margin: 0 auto;
+  padding: 25px 0;
 }
 
 /* メイン */

@@ -18,6 +18,11 @@ RSpec.describe Post, type: :model do
         @post.valid?
         expect(@post.errors.full_messages).to include("Title can't be blank")
       end
+      # it "titleが40字を超えると投稿できない" do
+      #   @post.title = "あいうえおアイウエオあいうえおアイウエオあいうえおアイウエオあいうえおアイウエオあ"
+      #   @post.valid?
+      #   # expect(@post.errors.full_messages).to include("Title can't be blank")
+      # end
       it "textが空だと投稿できない" do
         @post.text = ""
         @post.valid?
