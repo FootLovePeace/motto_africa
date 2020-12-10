@@ -1,36 +1,47 @@
 <main class="main">
   <div class="inner">
     <div class="post__wrapper">
-      <p class="post__heading">
-        <%= "#{@post.title}"%>
-      </p>
-      <%= link_to "投稿者 #{@post.user.nickname}", "/users/#{@post.user_id}", class: :post__user %>
-      <% if user_signed_in? && current_user.id == @post.user_id %>
-        <div class="post__manage">
-          <%= link_to "編集", edit_post_path(@post.id), class: :post__btn %>
-          <%= link_to "削除", post_path(@post.id), method: :delete, class: :post__btn %>
+      <div class="article-contents">
+        <div class='article-lists'>
+          <div class='article-one'>
+            <%= image_tag @post.image, class: "article-img"%>
+            <div class="article-info">    
+              <div class="article-title">
+                <%= @post.title %>
+              </div>
+              <div class="article-info-group1">  
+                <div class="article-country">
+                  <%= @post.country.name %>
+                </div>
+                <div class="article-genre">
+                  <%= @post.genre.name %>
+                </div>
+                <div class="article-date">
+                  <%= l @post.created_at %>
+                </div>  
+              </div> 
+              <div class="article-info-group2">  
+                <%= image_tag 'icon-user.png', class: "article-icon" %>
+                <div class="article-user">
+                <%= @post.user.nickname %>
+              </div>
+            </div>
+          </div>
         </div>
-      <% end %>  
-      <div class="post__image">
-        <%= image_tag(@post.image) %>
+        <div class='article-text'>
+          <%= safe_join(@post.text.split("\n"),tag(:br)) %>
+        </div>
+      </div>   
+    </div> 
+    <%= link_to "#{@post.user.nickname}さんの投稿した記事の一覧へ", "/users/#{@post.user_id}", class: :post__user %>  
+    
+    <% if user_signed_in? && current_user.id == @post.user_id %>
+      <div class="post__manage">
+        <%= link_to "編集", edit_post_path(@post.id), class: :post__btn %>
+        <%= link_to "削除", post_path(@post.id), method: :delete, class: :post__btn %>
       </div>
-      <div class="post__body">
-        <div class="post__detail">
-          <p class="detail__message">
-            <%= "#{@post.text}" %>
-          </p>
-        </div> 
-        <div class="post__detail">
-          <p class="detail__message">
-            <%= "#{@post.country.name}" %> 
-          </p>
-        </div>       
-        <div class="post__detail">
-          <p class="detail__message">
-            <%= "#{@post.genre.name}" %> 
-          </p>
-        </div>       
-      </div>
+    <% end %> 
+
       <div class="post__comments">
         <% if user_signed_in? %>
           <%= form_with(model: [@post, @comment], local: true) do |f|%>
