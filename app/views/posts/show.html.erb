@@ -1,38 +1,37 @@
 <main class="main">
   <div class="inner">
-    <div class="post__wrapper">
-      <div class="article-contents">
-        <div class='article-lists'>
-          <div class='article-one'>
-            <%= image_tag @post.image, class: "article-img"%>
-            <div class="article-info">    
-              <div class="article-title">
-                <%= @post.title %>
+    <div class="article-contents">
+      <div class='article-lists'>
+        <div class='article-one'>
+          <%= image_tag @post.image, class: "article-img"%>
+          <div class="article-info">    
+            <div class="article-title">
+              <%= @post.title %>
+            </div>
+            <div class="article-info-group1">  
+              <div class="article-country">
+                <%= @post.country.name %>
               </div>
-              <div class="article-info-group1">  
-                <div class="article-country">
-                  <%= @post.country.name %>
-                </div>
-                <div class="article-genre">
-                  <%= @post.genre.name %>
-                </div>
-                <div class="article-date">
-                  <%= l @post.created_at %>
-                </div>  
-              </div> 
-              <div class="article-info-group2">  
-                <%= image_tag 'icon-user.png', class: "article-icon" %>
-                <div class="article-user">
-                <%= @post.user.nickname %>
+              <div class="article-genre">
+                <%= @post.genre.name %>
               </div>
+              <div class="article-date">
+                <%= l @post.created_at %>
+              </div>  
+            </div> 
+            <div class="article-info-group2">  
+              <%= image_tag 'icon-user.png', class: "article-icon" %>
+              <div class="article-user">
+              <%= @post.user.nickname %>
             </div>
           </div>
         </div>
-        <div class='article-text'>
-          <%= safe_join(@post.text.split("\n"),tag(:br)) %>
-        </div>
-      </div>   
+      </div>
+      <div class='article-text'>
+        <%= safe_join(@post.text.split("\n"),tag(:br)) %>
+      </div>
     </div> 
+        
     <%= link_to "#{@post.user.nickname}さんの投稿した記事の一覧へ", "/users/#{@post.user_id}", class: :post__user %>  
     
     <% if user_signed_in? && current_user.id == @post.user_id %>
@@ -42,29 +41,28 @@
       </div>
     <% end %> 
 
-      <div class="post__comments">
-        <% if user_signed_in? %>
-          <%= form_with(model: [@post, @comment], local: true) do |f|%>
-            <div class="field">
-              <%= f.label :text, "コメント" %><br />
-              <%= f.text_field :text %>
-            </div>
-            <div class="actions">
-              <%= f.submit "送信する", class: :form__btn  %>
-            </div>
-          <% end%>
+    <div class="post__comments">
+      <% if user_signed_in? %>
+        <%= form_with(model: [@post, @comment], local: true) do |f|%>
+          <div class="field">
+            <%= f.label :text, "コメント" %><br />
+            <%= f.text_field :text %>
+          </div>
+          <div class="actions">
+            <%= f.submit "送信する", class: :form__btn  %>
+          </div>
         <% end%>
-        <ul class="comments_lists">
-        <% @comments.each do |comment| %>
-          <li class="comments_list">
-            <p>
-              <%= comment.text%>
-              <%= link_to "(#{comment.user.nickname})", "/users/#{comment.user_id}", class: :comment_user %>
-            </p>  
-          </li>
-        <% end %>
-        </ul>  
-      </div>      
-    </div>
+      <% end%>
+      <ul class="comments_lists">
+      <% @comments.each do |comment| %>
+        <li class="comments_list">
+          <p>
+            <%= comment.text%>
+            <%= link_to "(#{comment.user.nickname})", "/users/#{comment.user_id}", class: :comment_user %>
+          </p>  
+        </li>
+      <% end %>
+      </ul>  
+    </div>  
   </div> 
 </main>

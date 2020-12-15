@@ -16,10 +16,10 @@
     <div class="search-contents">
       <h1 class="search-title">記事検索</h1>
       <%= search_form_for @p, url: search_posts_path do |f| %>
-        <%= f.label :country_id_eq, '国名' %>
+        <%= f.label :country_id_eq, '国名', class: "search-name" %>
         <%= f.collection_select :country_id_eq, Country.where.not(id: 1), :id, :name, include_blank: '指定なし' %>
         <br>
-        <%= f.label :genre_id_eq, 'ジャンル' %>
+        <%= f.label :genre_id_eq, 'ジャンル', class: "search-name" %>
         <%= f.collection_select :genre_id_eq, Genre.where.not(id: 1), :id, :name, include_blank: '指定なし' %>
         <br>
         <%= f.submit '検索', class: "search-btn" %>
