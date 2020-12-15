@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :post do
-    title      {Faker::Name.initials}
+    title      {Faker::Name.initials(number: 11)}
     text       {Faker::Lorem.sentence}
     country_id {Faker::Number.within(range: 2..55)}
     genre_id   {Faker::Number.within(range: 2..15)}

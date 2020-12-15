@@ -13,7 +13,7 @@ class Post < ApplicationRecord
     validates :image
   end   
   
-  with_options numericality: { other_than: 1, message: 'Select' } do
+  with_options numericality: { other_than: 1, message: 'を選択してください' } do
     validates :country_id
     validates :genre_id
   end

@@ -5,6 +5,9 @@ ja:
        nickname: ニックネーム
        password: パスワード
        email: メールアドレス
-     tweet:
+     post:
+       title: タイトル
        text: テキスト
        image: 画像
+       country_id: 国名
+       genre_id: ジャンル
