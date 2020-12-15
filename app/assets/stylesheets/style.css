@@ -425,3 +425,166 @@ color: black;
   color: #fff;
   font-size: 20px;
 }
+
+/* タブレット対応 */
+@media (max-width: 1024px) {
+  .inner {
+    width: 98%;
+    margin: 0 auto;
+  }
+  .title-contents {
+    height: 35vh;
+  }
+  .service-title {
+    font-size: 30px;
+  }
+  .service-explain {
+    font-size: 25px;
+  }
+  .service-title {
+    font-size: 30px;
+  }
+  .service-explain {
+    font-size: 20px;
+  }
+  .search-title {
+    font-size: 20px;
+  }
+  #q_country_id_eq {
+    font-size: 10px;
+    margin: 10px;
+  }
+  #q_genre_id_eq {
+    font-size: 10px;
+    margin: 0 10px;
+  }
+  .search-name {
+    font-size: 10px;
+  }
+  .search-btn{
+    font-size: 10px;
+  }
+  .article-contents {
+    font-size: 10px;
+  }
+  .article-one {
+    width: 70%;
+    height: 200px;
+  }
+  .article-img {
+    height: 200px;
+    width: 200px;
+  }
+  .article-info {
+    width: calc(100% - 220px);
+  }
+  .article-title {
+    font-size: 15px;
+  }
+  .article-date {
+    font-size: 10px;
+  }
+  .article-icon {
+    height: 20px;
+    width: 20px;
+  }
+  .article-user {
+    font-size: 15px;
+  }
+  .article-details {
+    font-size: 18px;
+  }
+  .pagination {
+    font-size: 20px;
+  }
+  .article-btn {
+    height: 70px;
+    width: 70px;
+    right: 20px;
+  }
+  .article-btn-text {
+    font-size: 15px;
+  }
+  .article-btn-icon {
+    width: 35px;
+  }
+  .article-text {
+    width: 70%;
+  }
+
+ /* スマホ表示 */
+@media (max-width: 599px) {
+  .inner {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .title-contents {
+    height: 40vh;
+  }
+  .service-title {
+    font-size: 30px;
+  }
+  .service-explain {
+    font-size: 20px;
+  }
+  .search-title {
+    font-size: 20px;
+  }
+  #q_country_id_eq {
+    font-size: 10px;
+    margin: 10px;
+  }
+  #q_genre_id_eq {
+    font-size: 10px;
+    margin: 0 10px;
+  }
+  .search-name {
+    font-size: 10px;
+  }
+  .search-btn{
+    font-size: 10px;
+  }
+  .article-contents {
+    font-size: 10px;
+  }
+  .article-one {
+    height: 180px;
+  }
+  .article-img {
+    height: 180px;
+    width: 180px;
+  }
+  .article-info {
+    width: calc(100% - 200px);
+  }
+  .article-title {
+    font-size: 15px;
+  }
+  .article-date {
+    font-size: 10px;
+  }
+  .article-icon {
+    height: 20px;
+    width: 20px;
+  }
+  .article-user {
+    font-size: 15px;
+  }
+  .article-details {
+    font-size: 15px;
+  }
+  .pagination {
+    font-size: 15px;
+  }
+  .article-btn {
+    height: 60px;
+    width: 60px;
+    right: 20px;
+  }
+  .article-btn-text {
+    font-size: 10px;
+  }
+  .article-btn-icon {
+    width: 30px;
+  }
+}
