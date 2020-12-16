@@ -511,6 +511,7 @@ color: black;
   .article-text {
     width: 70%;
   }
+}  
 
  /* スマホ表示 */
 @media (max-width: 599px) {
