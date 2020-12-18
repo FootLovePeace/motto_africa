@@ -1,0 +1,297 @@
+/* ヘッダー */
+.header {
+  background-color: #e2eee2;
+  padding: 10px 0;
+}
+
+.inner {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 300px;
+}
+
+.nav__nickname{
+  display: inline-block;
+  padding: 1.5em 1.6em;
+  font-size: large;
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav__logout{
+  display: inline-block;
+  padding: 0.5em;
+  font-size: large;
+  color: #000000;
+  text-decoration: none;
+  border: 2px #000000 solid;
+  border-radius: 5px;
+}
+
+.nav__btn{
+  display: inline-block;
+  padding: 0.5em 1em;
+  margin:  1em 0.5em;
+  font-size: large;
+  color: #000000;
+  text-decoration: none;
+  border: 2px #000000 solid;
+  border-radius: 5px;
+}
+
+/* メイン */
+.main {
+  min-height: calc(100vh - 145px);
+  background: linear-gradient(white, #ecf8e8);
+}
+
+.title-contents {
+  height: 65vh;
+  background-image: image-url("motto-africa-header.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+} 
+
+.bg-opacity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, .3);
+  height:100%
+}  
+
+.service-title {
+  font-size: 7vh;
+}
+
+.service-explain {
+  font-size: 4vh;
+  line-height: 70px;
+}
+
+.page-heading {
+  font-size: 30px;
+  margin: 28px 0;
+}
+
+.search-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+}
+
+#q_country_id_eq {
+  font-size: 20px;
+  margin: 15px;
+}
+
+#q_genre_id_eq {
+  font-size: 20px;
+  margin: 0 15px;
+}
+
+.search-name {
+  font-size: 20px;
+}
+
+.search-btn{
+  display:block;
+  background:#5ece3c;
+  font-size: 20px;
+  border:none;
+  color:#FFF;
+  margin: 15px auto;
+}
+
+.search-btn:hover {
+  opacity: 0.8;
+}
+
+.article-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 0;
+}
+
+.article-lists {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-one {
+  width: 50%;
+  margin-top: 20px;
+  box-shadow: 5px 5px 15px #b1b1b1;
+  background-color: rgb(255, 254, 246) ;
+}
+
+.article-img {
+  width: 250px;
+  height: 250px;
+  float: left;
+}
+
+.article-info {
+  width: calc(100% - 280px);
+  height: 250px;
+  float: right;
+}
+
+.article-title{
+  width: 100%;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #000000;
+  letter-spacing: 0.05em;
+}
+
+.no-underline{
+  text-decoration: none;
+}
+
+.article-info-group1{
+  display: flex;
+  justify-content: flex-start;
+  margin: 15px auto;
+}
+
+.article-country{
+  background-color: rgb(255, 234, 0);
+  border-radius: 15px;
+	color: #000000;
+  padding: 5px 8px;
+  margin: 10px 0px;
+}
+
+.article-genre{
+  background-color: rgb(255, 111, 0);
+  border-radius: 15px;
+	color: #000000;
+  padding: 5px 8px;
+  margin: 10px 15px;
+}
+
+.article-date{
+  font-size: 20px;
+	color: gray;
+  margin: auto 20px;
+  margin-left: auto;
+}
+
+.article-info-group2{
+  display: flex;
+  justify-content: flex-start;
+  margin: 15px auto;
+}
+
+.article-icon{
+  height: 30px;
+  width: 30px;
+}
+
+.article-user{
+  font-size: 20px;
+	color: #000000;
+  margin: 0px 10px;
+  text-decoration: none;
+}
+
+.article-details{
+  font-size: 20px;
+  margin: 15px auto;
+}
+
+.article-text {
+  width: 50%;
+  font-size: 20px;
+  box-shadow: 5px 5px 15px #b1b1b1;
+  background-color: rgb(255, 254, 246) ;
+}
+
+.pagination{
+  margin-top: 15px;
+font-size: 30px;
+color: black;
+}
+
+.card {
+  width: calc((100% - 50px) / 3);
+  margin-bottom: 40px;
+}
+
+.card__img {
+  margin-bottom: 16px;
+}
+
+.card__title {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.card__summary {
+  font-size: 16px;
+}
+
+.card__user {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  text-align: right;
+  text-decoration: underline;
+}
+
+.article-btn {
+  width: 120px;
+  background: #5ece3c;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 45px;
+  right: 32px;
+  position: fixed;
+  padding-bottom: 3px;
+  text-decoration: none;
+}
+
+.article-btn-text {
+  color: #fff;
+  display: block;
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.article-btn-icon {
+  width: 75px;
+}
+
+/* フッター */
+.footer {
+  background-color: rgb(128, 124, 124);
+  padding: 5px 0;
+}
+
+.copyright {
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+}
