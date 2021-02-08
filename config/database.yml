@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: motto_africa_production
-  username: motto_africa
-  password: <%= ENV['MOTTO_AFRICA_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
