@@ -6,7 +6,7 @@
 <br>
 
 # URL
-## https://motto-africa.herokuapp.com/
+## http://3.114.137.128/
 <br>
 
 # ID/Pass
